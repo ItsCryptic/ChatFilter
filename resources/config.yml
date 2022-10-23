@@ -1,0 +1,5 @@
+Messages:
+  Prefix: "&9&lVibe &8» "
+  NoPermission: "&cYou do not have permission to execute this command!"
+Filter:
+  - "test"

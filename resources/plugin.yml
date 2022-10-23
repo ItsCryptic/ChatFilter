@@ -1,0 +1,9 @@
+name: VChatFilter
+version: 1.0
+api-version: 1.19
+author: ItsCryptic
+main: me.kevind.main.ChatFilter
+commands:
+  chatfilter:
+    aliases:
+      - "cf"
