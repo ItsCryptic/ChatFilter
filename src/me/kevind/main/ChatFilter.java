@@ -7,6 +7,7 @@ import com.comphenix.protocol.ProtocolManager;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketEvent;
 import me.kevind.commands.ChatFilterCommand;
+import me.kevind.listeners.PlayerChatEvent;
 import net.kyori.adventure.text.serializer.ComponentSerializer;
 import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.Bukkit;
@@ -26,6 +27,7 @@ public class ChatFilter extends JavaPlugin {
     public void onEnable() {
         instance = this;
         getCommand("chatfilter").setExecutor(new ChatFilterCommand());
+        Bukkit.getPluginManager().registerEvents(new PlayerChatEvent(), this);
         if (Bukkit.getServer().getPluginManager().isPluginEnabled("ProtocolLib")) {
             getLogger().info("ProtocolLib found!");
         }else {
@@ -39,7 +41,7 @@ public class ChatFilter extends JavaPlugin {
             if (Bukkit.getPluginManager().isPluginEnabled(this))
                 Bukkit.getPluginManager().disablePlugin(this);
         }
-        ProtocolManager manager = ProtocolLibrary.getProtocolManager();
+        /*ProtocolManager manager = ProtocolLibrary.getProtocolManager();
         manager.addPacketListener(new PacketAdapter(instance, PacketType.Play.Server.CHAT) {
             @Override
             public void onPacketSending(PacketEvent event) {
@@ -49,7 +51,7 @@ public class ChatFilter extends JavaPlugin {
 
                 }
             }
-        });
+        });*/
         saveDefaultConfig();
     }
     public void onDisable() {
