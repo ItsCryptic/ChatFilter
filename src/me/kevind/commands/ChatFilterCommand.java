@@ -16,7 +16,7 @@ public class ChatFilterCommand implements CommandExecutor {
             Player player = (Player) sender;
             if (player.hasPermission("vibe.chatfilter")) {
                 if (args[0] == null) {
-                    player.sendMessage(ColorUtils.color(ChatFilter.getPrefix() + "&cPlease specify either add or list!"));
+                    player.sendMessage(ColorUtils.color(ChatFilter.getPrefix() + "&cPlease say what you want to do e.g reload"));
                 }if (args[0].equalsIgnoreCase("reload")) {
                     ChatFilter.getInstance().reloadConfig();
                     player.sendMessage(ColorUtils.color(ChatFilter.getPrefix() + "&aReloaded config."));
