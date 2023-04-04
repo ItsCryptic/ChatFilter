@@ -28,30 +28,6 @@ public class ChatFilter extends JavaPlugin {
         instance = this;
         getCommand("chatfilter").setExecutor(new ChatFilterCommand());
         Bukkit.getPluginManager().registerEvents(new PlayerChatEvent(), this);
-        if (Bukkit.getServer().getPluginManager().isPluginEnabled("ProtocolLib")) {
-            getLogger().info("ProtocolLib found!");
-        }else {
-            getLogger().warning("ProtocolLib not found. Disabling...");
-            Bukkit.getPluginManager().disablePlugin(this);
-        }
-        if (Bukkit.getServer().getPluginManager().isPluginEnabled("PacketWrapper")) {
-            getLogger().info("Found PacketWrapper, using....");
-        }else {
-            getLogger().warning("PacketWrapper not found, disabling...");
-            if (Bukkit.getPluginManager().isPluginEnabled(this))
-                Bukkit.getPluginManager().disablePlugin(this);
-        }
-        /*ProtocolManager manager = ProtocolLibrary.getProtocolManager();
-        manager.addPacketListener(new PacketAdapter(instance, PacketType.Play.Server.CHAT) {
-            @Override
-            public void onPacketSending(PacketEvent event) {
-                List<String> list = instance.getConfig().getStringList("Filter");
-                WrapperPlayServerChat packet = new WrapperPlayServerChat(event.getPacket());
-                if (ChatColor.stripColor(packet.getMessage().getJson().equalsIgnoreCase("a"))) {
-
-                }
-            }
-        });*/
         saveDefaultConfig();
     }
     public void onDisable() {

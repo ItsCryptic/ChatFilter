@@ -21,7 +21,7 @@ public class PlayerChatEvent implements Listener {
         for (String string : message.split(" ")) {
             if (list.contains(string.toLowerCase())) {
                 event.setCancelled(true);
-                player.sendMessage(ColorUtils.color(ChatFilter.getPrefix() + "&7Hey, you can't say &c" + string.toLowerCase() + " &7here."));
+                player.sendMessage(ColorUtils.color(ChatFilter.getPrefix() + "&7Hey &9" + player.getName() + "&7, you can't say that &7here."));
                 return;
             }
 

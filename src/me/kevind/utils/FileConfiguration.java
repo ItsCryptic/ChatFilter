@@ -18,7 +18,8 @@ public class FileConfiguration {
 
     public void createFiles() throws IOException {
         if (!ChatFilter.getInstance().getDataFolder().exists()) ChatFilter.getInstance().getDataFolder().mkdir();
-        playerfile = new File(ChatFilter.getInstance().getDataFolder() + "players/", player.getUniqueId().toString() + ".yml");
+        playerfile = new File(ChatFilter.getInstance().getDataFolder() + "logs/players/", player.getUniqueId().toString() + ".yml");
+        dataFile = new File(ChatFilter.getInstance().getDataFolder() + "");
     }
 
 }

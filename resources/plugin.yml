@@ -3,9 +3,6 @@ version: 1.0.1
 api-version: 1.19
 author: ItsCryptic
 main: me.kevind.main.ChatFilter
-depend:
-  - ProtocolLib
-  - PacketWrapper
 commands:
   chatfilter:
     aliases:
